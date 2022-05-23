@@ -10,9 +10,14 @@ module.exports = (sequelize) => {
     },
 
     id: {
-      type: DataTypes.STRING(3),
+      type: DataTypes.STRING,
+      validate: {
+        len: [3],//tipo string, largo máx 3 letras
+        isAlpha: true,
+      },
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      unique: true,
     },
     img_flag: {
       type: DataTypes.STRING,
@@ -28,12 +33,15 @@ module.exports = (sequelize) => {
     },
     sub_region: {
       type: DataTypes.STRING,
+      allowNull: false
     },
     area: {
       type: DataTypes.INTEGER,
+      allowNull: false
     },
     population: {
       type: DataTypes.INTEGER,
+      allowNull: false
     }
   });
 };
