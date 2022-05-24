@@ -19,7 +19,7 @@ module.exports = (sequelize) => {
       primaryKey: true,
       unique: true,
     },
-    img_flag: {
+    flag: {
       type: DataTypes.STRING,
       allowNull: false
     },

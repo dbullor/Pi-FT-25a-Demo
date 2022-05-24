@@ -1,19 +1,17 @@
 
-const { axios }= require ('axios');
+const axios = require('axios');
 const {Country} = require('../db');
 
 
-
-
 const infoApi = async () =>{
+    
     try {
-        const urlCountries = await axios.get(`https://restcountries.com/v3/all`);
-        urlCountries.data.map(async(country)=>{//hago esto para que no me traiga datos que no son pedidos en el readme
-           await Country.findOrCreate({
-                where:{
+        
+        const urlCountries = (await axios.get(`https://restcountries.com/v3/all`)).data.map(country=>{
+            return {
                 id: country.cca3,
                 name: country.name.official,
-                img_flag: country.img_flag[0],
+                flag: country.flags ? country.flags[0] : 'no hay bandera',
                 continent: country.region,
                 capital: country.capital
                     ? country.capital[0]
@@ -23,15 +21,16 @@ const infoApi = async () =>{
                     : "This Subregion isn't loaded.",
                 area: country.area,
                 population: country.population,
-
-                },
-            });
-        });
+            } })
+            await Country.bulkCreate(urlCountries);
+            console.log('Countries successfully loaded into DB');
+        
     } catch (err) {
         console.log(err);
     }
 };
 
 module.exports = {
-    infoApi,
+    infoApi
   };
+
