@@ -1,5 +1,7 @@
+// const router = require('express').Router()
+// const {getAllCountries} = require('./controllers/getAllCountriesContr')
 
-const router = require('express').Router()
+// router.get('/', getAllCountries)
 
 
-module.exports = router;
+// module.exports = router;

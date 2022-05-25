@@ -8,12 +8,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true,
-      allowNull: false
-    },
+    
     difficulty:{
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -35,6 +30,6 @@ module.exports = (sequelize) => {
         allowNull: false
     }
 
-  })
+  }, {timestamps: false})
 
 }

@@ -1,32 +1,83 @@
-const {Country, Activity} = require('../../db');
+
+const { Country, Activity } = require ('../../db');
+const { Op } = require('sequelize')
 
 
-
-// [ ] GET /countries:
-// En una primera instancia deberán traer todos los países desde 
-//restcountries y guardarlos en su propia base de datos y 
-//luego ya utilizarlos desde allí (Debe almacenar solo 
-//los datos necesarios para la ruta principal)
-// Obtener un listado de los paises.
-// [ ] GET /countries/{idPais}:
-// Obtener el detalle de un país en particular
-// Debe traer solo los datos pedidos en la ruta de detalle de país
-// Incluir los datos de las actividades turísticas correspondientes
-// [ ] GET /countries?name="...":
-// Obtener los países que coincidan con el nombre pasado como query parameter (No necesariamente tiene que ser una matcheo exacto)
-// Si no existe ningún país mostrar un mensaje adecuado
-
-const getCountries = async (req, res)=>{
+const getCountries =  async (req, res) => {
     try {
-        const {name} = req.query;
+        const name = req.query.name;
         if(name){
-            const country = await Country.findOne({
-                where:{name}
+        const country = await Country.findOne({
+            where: {
+                name:{[Op.iLike]: '%' + name + '%'}
+            },
+            include:{
+                model: Activity,
+                attributes: ['name', 'difficulty', 'duration', 'season'],
+                through: {attributes: []},
+            },            
+        })
+            if (!country){
+                res.status(404).json('Country not found')
+            } else {
+                res.json(country)
+                console.log(country)
+            }
+        } else {
+            const countries = await Country.findAll({
+                include: {
+                    model: Activity,
+                    attributes: [
+                        'name',
+                        'season',
+                        'difficulty',
+                        'duration',
+                    ],
+                    through: {attributes: []}
+                }            
             })
+            if(countries){
+                res.json(countries)        
+            } else{
+                res.status(404).send("Country isn't found")
+            }
         }
-    } catch (error) {
-        
+        } catch (error) {
+            res.status(404).send(error)
+    }
+}
+
+const getCountry = async (req, res) => {
+    const { id } = req.params;
+    try {
+        if(id){
+        const country = await Country.findOne({
+            where: {
+                id: {[Op.iLike]: `%${id}%`}
+            },
+            include:{
+                model: Activity,
+                attributes: [
+                    'name',
+                    'season',
+                    'difficulty',
+                    'duration',
+                ],
+                through: {attributes: []}
+            }
+        })
+        if (!country){
+            return res.status(404).json('Country not found')
+        } else{
+            return res.json(country)
+        }
+    } else {
+        return res.status(404).json('Country not found')
     }
 
-
+    } catch (error) {
+        res.status(404).send(error)
+    }
 }
+
+module.exports = {getCountries, getCountry}

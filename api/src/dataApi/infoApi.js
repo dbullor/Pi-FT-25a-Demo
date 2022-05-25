@@ -11,7 +11,7 @@ const infoApi = async () =>{
             return {
                 id: country.cca3,
                 name: country.name.official,
-                flag: country.flags ? country.flags[0] : 'no hay bandera',
+                flag: country.flags[0],
                 continent: country.region,
                 capital: country.capital
                     ? country.capital[0]
@@ -23,7 +23,7 @@ const infoApi = async () =>{
                 population: country.population,
             } })
             await Country.bulkCreate(urlCountries);
-            console.log('Countries successfully loaded into DB');
+            
         
     } catch (err) {
         console.log(err);
