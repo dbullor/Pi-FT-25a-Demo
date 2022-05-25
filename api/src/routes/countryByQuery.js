@@ -1,7 +1,7 @@
-const router = require('express').Router()
-const {getCountries} = require('./controllers/getAllCountriesContr')
+const router = require('express').Router();
+const {getCountries} = require('./controllers/getAllCountriesContr');
 
-router.get('/', getCountries)
+router.get('/', getCountries);
 
 
 module.exports = router;
