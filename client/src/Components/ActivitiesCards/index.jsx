@@ -8,6 +8,8 @@ import validate from './validate';
 
 
 
+
+
 export default function ActivitiesCards() {
 const dispatch = useDispatch();
 const navigate= useNavigate()
@@ -79,10 +81,11 @@ useEffect(()=>{
 
   return (
     <div>
-      <Link to='/home'>
-        <button>Back</button>
-      </Link>
-      <h1>Create Activity</h1>
+      <div>
+      <h1>The World waits for Us. Let's travel!!</h1>
+      <h2>Create Tourist Activity</h2>
+        
+      </div>
       <form onSubmit={(e)=> handleSubmit(e)}>
         <div>
           <label>Name:</label>
@@ -91,63 +94,53 @@ useEffect(()=>{
             <p className='error'>{errors.name}</p>
           )}
         </div>
+
         <div>
-          <label>Difficulty</label>
-          <label>
-            <input type="checkbox" name='1' value='1' onChange={(e)=>handleCheck(e)}/>1
-          </label>
-          <label>
-            <input type="checkbox" name='2' value='2' onChange={(e)=>handleCheck(e)}/>2
-          </label>
-          <label>
-            <input type="checkbox" name='3' value='3' onChange={(e)=>handleCheck(e)}/>3
-          </label>
-          <label>
-            <input type="checkbox" name='4' value='4' onChange={(e)=>handleCheck(e)}/>4
-          </label>
-          <label>
-            <input type="checkbox" name='5' value='5' onChange={(e)=>handleCheck(e)}/>5
-          </label>
+          <label>Difficulty: </label>
+          <select onChange = {e => handleChange(e)}>Difficulty
+          <option value="1" key="1">Easy</option>
+          <option value="2" key ="2">Gentle</option>
+          <option value="3" key ="3">Moderate</option>
+          <option value="4" key ="4">Demanding</option>
+          <option value="5" key ="5">Strenuous</option>  
+        </select>
         </div>
+
         <div>
         <label>Duration: </label>
         <select onChange = {e => handleChange(e)}>Duration
         
-          <option value="1" key="1">Menor a 1 Hour</option>
-          <option value="3" key ="3">Menor a 3 Hours</option>
-          <option value="more3" key ="more3">Menor a 6 Hours</option>
-          <option value="more6" key ="more6">Menor a 12 Hours</option>
-          <option value="more12" key ="more12">Mayor a 12 Hours</option>
+          <option value="1" key="1">Less than 1 hour</option>
+          <option value="3" key ="3">Less than 3 hours</option>
+          <option value="more3" key ="more3">Less than 3 hours</option>
+          <option value="more6" key ="more6">Less than 3 hours</option>
+          <option value="more12" key ="more12">More than 12 hours</option>
           
         </select>
         </div>
 
         <div>
-          <label>Season</label>
-          <label>
-            <input type="checkbox"   name='Summer' value='Summer'/>Summer
-          </label>
-          <label>
-            <input type="checkbox" name='Autumn' value='Autumn'/>Autumn
-          </label>
-          <label>
-            <input type="checkbox" name='Winter' value='Winter'/>Winter
-          </label>
-          <label>
-            <input type="checkbox" name='Spring' value='Spring'/>Spring
-          </label>
-          <label>
-            <input type="checkbox" name='AllYear' value='AllYear'/>All year
-          </label>
+          <label>Season: </label>
+          <select onChange = {e => handleChange(e)}>Season
+        
+          <option value="Summer" key="Summer">Summer</option>
+          <option value="Autumn" key ="Autumn">Autumn</option>
+          <option value="Winter" key ="Winter">Winter</option>
+          <option value="Spring" key ="Spring">Spring</option>
+          <option value="All year" key ="All year">All year</option>
+          
+        </select>
         </div>
         <select onChange={(e)=>handleSelect(e)}>
           {allCountries.map((c) =>(
             <option value={c.name}>{c.name}</option>
           ))}
         </select>
-        {errors.name || !input.name ? <button type="submit" disabled={true}>Create Activity</button>: 
+        {errors.name || !input.name
+        
+         ? <button type="submit" disabled={true}>Create Activity</button> : 
         <button type="submit" >Create Activity</button>}
-        {/* <ul><li>{input.countries.map(el => el + ' ,')}</li></ul> */}
+        
          
       </form>
       {
@@ -158,6 +151,9 @@ useEffect(()=>{
           </div>
         )
       }
+      <Link to='/home'>
+        <button>Back</button>
+      </Link>
     </div>
   )
 }

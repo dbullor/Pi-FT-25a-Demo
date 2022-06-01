@@ -30,8 +30,9 @@ export default function Details() {
             <h3>Capital: {country.capital}</h3>
             <h3>Continent: {country.continent}</h3>
             <h3>Subregion: {country.sub_region}</h3>
-            <h3>Area: {country.area}</h3>
+            <h3>Area: {country.area} Km2</h3>
             <h3>Population: {country.population}</h3>
+            <h3>Id: {country.id}</h3>
           </div>
           <div>
           </div>

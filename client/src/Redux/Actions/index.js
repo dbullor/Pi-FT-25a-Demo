@@ -18,7 +18,6 @@ export const getCountryByName = (name) => (dispatch) => {
 };
 
 export const getCountryDetails = (id) => (dispatch) => {
-  
   return axios.get(`http://localhost:3001/countries/${id}`)
   .then((info) => dispatch({ type: 'GET_COUNTRY_DETAILS', payload: info.data }))
   .catch((error) => console.log(error))

@@ -1,17 +1,25 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import Home from '../Home';
+import SearchBar from '../SearchBar/index'
+
 
 export default function NavBar() {
   return (
+
     <div>
-      <Link to='/home/activity'>
-        <button className="newActivity">Create tourist activity</button>
-      </Link>
-        <h1>NavBar</h1>
+      <div>
+      <h1>The World waits for Us. Let's travel!!</h1>
+        <SearchBar/>
+        
+      </div>
+      <div>
       <Link to='/home' className='backHome'>
         <button className="btn.back">Back</button>
       </Link>
+      <Link to='/home/activity'>
+        <button className="newActivity">Create tourist activity</button>
+      </Link>
+      </div>
     </div>
   )
 }

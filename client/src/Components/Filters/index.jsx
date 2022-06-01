@@ -19,7 +19,6 @@ export default function Filter() {
     <OrderByLetter/>
     <FilterByActivity/>
     <FilterByContinent/>
-    <div>Filter</div>
   </div>
   )
 }

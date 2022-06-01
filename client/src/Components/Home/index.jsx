@@ -7,10 +7,8 @@ import {Link} from 'react-router-dom'
 import CountryCard from '../CountriesCards/CountryCard.jsx';
 import NavBar from '../NavBar';
 import Pagination from '../Pagination/index.jsx';
-import SearchBar from '../SearchBar/index'
 import FiltersOrder from '../Filters/index';
 import Styles from './styles.module.css';
-
 
 
 
@@ -22,7 +20,9 @@ function Home() {
   const dispatch = useDispatch();
   const { countries } = useSelector((state)=> {return state})
   const [currentPage, setCurrentPage] = useState(1);
-  const [countriesPerPage] = useState(10);
+  let countriesPerPage = 0;
+  if (currentPage === 1) { countriesPerPage = 9 }
+  if (currentPage >= 2) { countriesPerPage = 10 }
   const indexOfLastCountry = currentPage * countriesPerPage;
   const indexFirstCountry = indexOfLastCountry - countriesPerPage;
 
@@ -48,15 +48,14 @@ function Home() {
   return (
     <div className={Styles.container}>
     <div>
-      <FiltersOrder/>
-        
-      <SearchBar />
       <NavBar/>
+      <FiltersOrder/>
+ 
       <button onClick={e =>{handleClick(e)}}>
         Reload all countries
       </button>
-      <Link to= '/home/activity'>Create Activity</Link>
-      <h1>Home</h1>
+      
+      
     </div>
     <div>
     <div key="pagination">
