@@ -42,7 +42,6 @@
           };
 
         case 'GET_COUNTRY_DETAILS':
-          console.log(action.payload)
             return {
             ...state, 
             countryId: action.payload 
@@ -58,6 +57,7 @@
 
         case 'FILTER_BY_ACTIVITY':
           const filter = [];
+          // if(payload ==='All')
           state.allCountries.map((count)=> count.allActivities.forEach((activity)=>{
             if(activity.name===action.payload){
               filter.push(count)

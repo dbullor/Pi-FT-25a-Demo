@@ -10,7 +10,7 @@ export default function OrderLetter() {
   return (
     
       <select name="order" onChange={onSelectChange}>
-        {/* <option value="order" key='order'>order alphabetically</option> */}
+        <option value="orderLetter" key='orderLetter'>Order alphabetically</option>
         <option value="AZ" key ='AZ'>From letter A to Z</option>
         <option value="ZA" key ='ZA'>From letter Z to A</option>
       </select>

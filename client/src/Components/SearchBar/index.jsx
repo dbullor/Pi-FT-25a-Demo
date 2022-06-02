@@ -3,7 +3,8 @@ import {useState}  from 'react'
 import { getCountryByName } from '../../Redux/Actions';
 import { useDispatch } from 'react-redux';
 
-export default function SearchBar() {
+
+export default function SearchBar( setOrder) {
   const [search, setSearch] = useState('')//creo un estado local
   let dispatch = useDispatch()
 
@@ -15,8 +16,13 @@ export default function SearchBar() {
 
   function handleSubmit(e){
     e.preventDefault();
+    if(search !== ''){
     dispatch(getCountryByName(search))
     setSearch('')
+    // setOrder(`Ordenado: ${e.target.value}`)
+    } else {
+      alert('Please enter a valid country')
+    }
   }
   
 

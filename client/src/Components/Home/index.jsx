@@ -35,6 +35,10 @@ function Home() {
     setCurrentPage(pageNumber);
   };
 
+  useEffect(()=>{
+    console.log(currentCountries)
+  },[])
+
   useEffect(() => {
     dispatch(getAllCountries());
   }, [dispatch]);
