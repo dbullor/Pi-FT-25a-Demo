@@ -6,50 +6,56 @@
   }
  
   .population{
-    color: #ffffff;
-    background: #246eb9;
-    font-size: 16px;
-      padding: 10px 10px;
-    margin-top: 20px;
-    margin-bottom: -10px;
-    border-radius: 5px;
-  }
- .population:hover{
-    opacity: .7;
-    background: #ffffff;
-    color: #246eb9;
-    font-weight: bolder;
- }
-
- .continent{
-        color: #ffffff;
-        background: #246eb9;
-        font-size: 16px;
-        padding: 10px 10px;
-        margin-top: 20px;
-        margin-bottom: -10px;
-        border-radius: 5px;
-}
-.continent:hover{
-        opacity: .7;
-        background: #ffffff;
-        color: #246eb9;
-        font-weight: bolder;
-}
-
-.letter{
-    color: #ffffff;
-    background: #246eb9;
+    color: #000000;
+    background: rgba(128, 128, 128, 0.557);
     font-size: 16px;
     padding: 10px 10px;
     margin-top: 20px;
     margin-bottom: -10px;
     border-radius: 5px;
+    border-color: black;
+    border-width: 2px;
+  }
+ .population:hover{
+    opacity: .7;
+    background: rgba(63, 63, 63, 0.557);
+    color: #000000;
+    font-weight: bolder;
+ }
+
+.continent{
+  color: #000000;
+  background: rgba(128, 128, 128, 0.557);
+  font-size: 16px;
+  padding: 10px 10px;
+  margin-top: 20px;
+  margin-bottom: -10px;
+  border-radius: 5px;
+  border-color: black;
+    border-width: 2px;
+}
+.continent:hover{
+        opacity: .7;
+        background: rgba(63, 63, 63, 0.557);
+        color: #000000;
+        font-weight: bolder;
+}
+
+.letter{
+  color: #000000;
+  background: rgba(128, 128, 128, 0.557);
+  font-size: 16px;
+  padding: 10px 10px;
+  margin-top: 20px;
+  margin-bottom: -10px;
+  border-radius: 5px;
+  border-color: black;
+    border-width: 2px;
 }
 .letter:hover{
     opacity: .7;
-    background: #ffffff;
-    color: #246eb9;
+    background: rgba(63, 63, 63, 0.557);
+    color: #000000;
     font-weight: bolder;
 }
 

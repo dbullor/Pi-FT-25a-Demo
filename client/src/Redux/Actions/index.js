@@ -27,7 +27,7 @@ export const getCountryDetails = (id) => (dispatch) => {
 
 
 export const getAllActivities = () => (dispatch) => {
-  return axios.get("http://localhost:3001/activity")
+  return axios.get("http://localhost:3001/activity/all")
   .then((info) => dispatch({ type: 'GET_ALL_ACTIVITIES', payload: info.data }))
   .catch((error) => console.log(error))
 };
@@ -70,5 +70,6 @@ export function orderPopulation(population){
     payload: population,
   }
 }
+
 
 

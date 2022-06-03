@@ -13,6 +13,7 @@ import Styles from './styles.module.css';
 
 
 
+
   //useEffect para traer el estado cuando el componente se monta
  
 function Home() {
@@ -41,6 +42,7 @@ function Home() {
 
   useEffect(() => {
     dispatch(getAllCountries());
+    
   }, [dispatch]);
 
  

@@ -56,17 +56,26 @@
           };
 
         case 'FILTER_BY_ACTIVITY':
-          const filter = [];
-          // if(payload ==='All')
-          state.allCountries.map((count)=> count.allActivities.forEach((activity)=>{
-            if(activity.name===action.payload){
-              filter.push(count)
+          
+          //filtro los que tienen al menos 1 actividad
+          const actFiltered = state.allCountries.filter((count) => {return count.activities.length > 0})
+          
+         
+          const activities = [];
+          const filterActivities = action.payload ==='All' ? state.allCountries : activities;
+          for(let i=0; i<actFiltered.length; i++){
+            for(let j=0; j<actFiltered[i].activities.length; j++){
+              if(actFiltered[i].activities[j].name===action.payload){
+                activities.push(actFiltered[i])
+              }
             }
-          }))
-          return {
-            ...state,
-            countries: filter
-          };
+          }
+          
+          return{
+            ...state, 
+            countries: filterActivities
+          }
+          
 
 
         case "ORDER_BY_POPULATION": 

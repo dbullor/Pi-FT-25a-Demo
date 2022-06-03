@@ -109,11 +109,11 @@ useEffect(()=>{
         <div>
           <label>Difficulty: </label>
           <select onChange = {e => handleDifficulty(e)}>Difficulty
-          <option value= {1} key="1">Easy</option>
-          <option value={2} key ="2">Gentle</option>
-          <option value={3} key ="3">Moderate</option>
-          <option value={4} key ="4">Demanding</option>
-          <option value={5} key ="5">Strenuous</option>  
+          <option value= {1} key="1">1</option>
+          <option value={2} key ="2">2</option>
+          <option value={3} key ="3">3</option>
+          <option value={4} key ="4">4</option>
+          <option value={5} key ="5">5</option>  
         </select>
         </div>
 

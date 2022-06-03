@@ -1,6 +1,6 @@
 .pagination{
-    color: #ffffff;
-    background: #246eb9;
+    color: #000000;
+    background: rgba(128, 128, 128, 0.557);
     font-size: 14px;
 	padding: 10px 15px;
     border-radius: 10px;
@@ -9,8 +9,8 @@
 }
 
 .pagination:hover{
-    background: #ffffff;
-    color: #246eb9 ;
+    background: #000000;
+    color: #ffffff;
     font-weight: bold;
     
 }
