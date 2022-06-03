@@ -51,14 +51,17 @@ function Home() {
   }
   return (
     <div className={Styles.container}>
-    <div>
-      <NavBar/>
+      <div>
+      <NavBar className= {Styles.navbar}/>
+      <div className={Styles.filter}>
       <FiltersOrder/>
- 
-      <button onClick={e =>{handleClick(e)}}>
-        Reload all countries
-      </button>
-      
+
+      </div>
+      <div>
+        <button  className={Styles.reload} onClick={e =>{handleClick(e)}}>
+          Reload all countries
+        </button>
+      </div>
       
     </div>
     <div>
@@ -69,12 +72,12 @@ function Home() {
             pagination={pagination}
           />
         </div>
-      
-        <div>
+        <div className={Styles.conten}>
+          <div className={Styles.card}>
           {currentCountries.length > 0 ? (
             currentCountries.map((c) => {
               return (
-                <div key={c.id}>
+                <div key={c.id} >
                   <Link to={'/home/' + c.id}>
                   <CountryCard continent={c.continent} name={c.name} flag={c.flag} id={c.id}/> 
                   </Link>
@@ -88,6 +91,7 @@ function Home() {
             </div>
           )}
         </div>
+      </div>
     </div>
     </div>
       

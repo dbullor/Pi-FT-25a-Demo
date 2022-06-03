@@ -1,4 +1,5 @@
 import React from "react";
+import Styles from './styles.module.css';
 
 export default function Pagination({ countriesPerPage, allCountries, pagination }) {
     const pageNumbers = [];
@@ -15,7 +16,8 @@ export default function Pagination({ countriesPerPage, allCountries, pagination 
                 <button
                   key={number}
                   onClick={() => pagination(number)}
-                >
+                  className={Styles.pagination}>
+                   
                   {number}
                 </button>
               );

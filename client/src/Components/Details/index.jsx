@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import Styles from './styles.module.css'
 
 
-export default function Details(activities) {
+export default function Details() {
   const {id}= useParams()
   const dispatch = useDispatch();
 

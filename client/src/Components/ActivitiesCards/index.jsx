@@ -19,16 +19,16 @@ const [input, setInput] = useState({
   countries: []
 })
 
-function handleSeason(ev) {
+function handleSeason(e) {
   setInput({
       ...input,
-      season: ev.target.value
+      season: e.target.value
   })
 }
-function handleDifficulty(ev) {
+function handleDifficulty(e) {
   setInput({
       ...input,
-      difficulty: ev.target.value
+      difficulty: e.target.value
   })
 }
 
@@ -61,7 +61,6 @@ function handleSelect(e){
 
 function handleSubmit(e){
   e.preventDefault();
-  // if(input.name && input.difficulty && input.duration && input.season && input.countries.length > 0){
   setErrors(validate({
     ...input,
     [e.target.value]: e.target.value
@@ -97,8 +96,6 @@ useEffect(()=>{
       <div>
       <h1>The World waits for Us. Let's travel!!</h1>
       <h2>Create Tourist Activity</h2>
-      {/* <div>{input.name} {input.difficulty}{input.season}{input.duration}{input.countries[0]}</div> */}
-
       </div>
       <form>
         <div>

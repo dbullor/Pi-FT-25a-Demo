@@ -3,18 +3,12 @@ import OrderByPopulation from '../Filters/byPopulation';
 import OrderByLetter from '../Filters/byLetter';
 import FilterByContinent from '../Filters/byContinent';
 import FilterByActivity from '../Filters/byActivity';
-import { useDispatch } from 'react-redux';
-import { getAllCountries } from '../../Redux/Actions';
+import Styles from './styles.module.css';
 
 export default function Filter() {
-  const dispatch = useDispatch()
 
-  function handleClick(e) {
-    e.preventDefault();
-    dispatch(getAllCountries());
-  }
   return (
-  <div>
+  <div className={Styles.container}>
     <OrderByPopulation/>
     <OrderByLetter/>
     <FilterByActivity/>
