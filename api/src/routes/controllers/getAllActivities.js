@@ -4,8 +4,7 @@ const { Activity } = require ('../../db');
 
 const getAllActivities =  async (req, res) => {
     try {
-        const activities = await Activity.findAll()
-          console.log('first')            
+        const activities = await Activity.findAll()           
         if(activities){
             res.json(activities)        
         } else{

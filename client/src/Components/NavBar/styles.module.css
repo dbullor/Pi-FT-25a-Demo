@@ -1,0 +1,61 @@
+.btnCreate{
+    color: #000000;
+    background: rgba(128, 128, 128, 0.557);
+    font-size: 16px;
+      padding: 10px 10px;
+    margin-top: 20px;
+    margin-bottom: -10px;
+    border-radius: 5px;
+    margin-right: -70px;
+    
+  }
+  
+.btnCreate:hover{
+    opacity: .7;
+    background: rgba(63, 63, 63, 0.557);
+    color: #000000;
+    font-weight: bolder;
+  
+  }
+
+  .btnBack{
+    color: #000000;
+    background: rgba(128, 128, 128, 0.557);
+    font-size: 16px;
+      padding: 10px 10px;
+    margin-top: 20px;
+    margin-bottom: -10px;
+    border-radius: 5px;
+    margin-right: 230px;
+  }
+  
+.btnBack:hover{
+    opacity: .7;
+    background: rgba(63, 63, 63, 0.557);
+    color: #000000;
+    font-weight: bolder;
+  
+  }
+
+.title{
+  color: #2f3e46;
+  font-style: oblique;
+  font-weight: 700;
+  font-size: 50px;
+  display: block;
+  font-family: monospace;
+  white-space: nowrap;
+  border-right: 4px solid;
+  width: 38ch;
+  margin-left: 190px;
+
+  animation: typing 5s steps(38), blink .5s infinite alternate;
+  overflow: hidden;
+}
+@keyframes typing{
+  from {width: 0 }
+}
+
+@keyframes blink {
+  50% {border: transparent}
+}

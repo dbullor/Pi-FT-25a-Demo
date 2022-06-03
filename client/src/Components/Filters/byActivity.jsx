@@ -17,9 +17,9 @@ export default function FilterByActivity() {
   }
 
   return (
-    <div className={Styles.activity}>
-      {/* <div>{allActivities[0]}</div> */}
-      <select className={Styles.select} onChange={(e)=> handleChange(e)}>
+    <div>
+      
+      <select className={Styles.activity} onChange={(e)=> handleChange(e)}>
         <option value='All'>Select Activity</option>
         {allActivities?.map((e)=>{return <option key={e.id} value={e.name}>{e.name}</option>})}
         </select>

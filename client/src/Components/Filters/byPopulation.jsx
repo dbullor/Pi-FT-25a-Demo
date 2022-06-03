@@ -4,7 +4,8 @@ import { useDispatch } from 'react-redux'
 import Styles from './styles.module.css';
 
 export default function OrderByPopulation() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  
   function onSelectChange(e){
     dispatch(orderPopulation(e.target.value))
   }

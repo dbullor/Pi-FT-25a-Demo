@@ -56,12 +56,13 @@
           };
 
         case 'FILTER_BY_ACTIVITY':
-          
+
           //filtro los que tienen al menos 1 actividad
           const actFiltered = state.allCountries.filter((count) => {return count.activities.length > 0})
           
-         
+         //almaceno las actividades en el array
           const activities = [];
+          
           const filterActivities = action.payload ==='All' ? state.allCountries : activities;
           for(let i=0; i<actFiltered.length; i++){
             for(let j=0; j<actFiltered[i].activities.length; j++){

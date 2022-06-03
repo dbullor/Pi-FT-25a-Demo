@@ -8,7 +8,7 @@ import Styles from './styles.module.css'
 export default function ActivitiesCards() {
 const dispatch = useDispatch();
 const navigate= useNavigate()
-const {countries} = useSelector((state)=>{return state})
+const {countries, allActivities} = useSelector((state)=>{return state})
 const [errors, setErrors] = useState({})
 
 const [input, setInput] = useState({
@@ -48,7 +48,10 @@ function handleChange(e){
   setErrors(validate({//seteo mi estado local errors
     ...input,
     [e.target.name]: e.target.value
-  }))
+  }, allActivities.map((e)=>{
+    return e.name
+  })
+  ))
 }
 
 
@@ -64,7 +67,9 @@ function handleSubmit(e){
   setErrors(validate({
     ...input,
     [e.target.value]: e.target.value
-  }))
+  }, allActivities.map((e)=>{
+    return e.name
+  })))
   dispatch(postActivity(input))
   alert('Tourist Activity created')
   setInput({
@@ -132,6 +137,7 @@ useEffect(()=>{
         <div>
           <label>Season: </label>
           <select onChange = {e => handleSeason(e)}>Season
+          <option value="Season" key="Season">Season</option>
           <option value="Summer" key="Summer">Summer</option>
           <option value="Autumn" key ="Autumn">Autumn</option>
           <option value="Winter" key ="Winter">Winter</option>

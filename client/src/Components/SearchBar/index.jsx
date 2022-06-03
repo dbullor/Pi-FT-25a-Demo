@@ -3,6 +3,8 @@ import {useState}  from 'react'
 import { getCountryByName } from '../../Redux/Actions';
 import { useDispatch } from 'react-redux';
 
+import Styles from './styles.module.css';
+
 
 export default function SearchBar( setOrder) {
   const [search, setSearch] = useState('')//creo un estado local
@@ -19,7 +21,6 @@ export default function SearchBar( setOrder) {
     if(search !== ''){
     dispatch(getCountryByName(search))
     setSearch('')
-    // setOrder(`Ordenado: ${e.target.value}`)
     } else {
       alert('Please enter a valid country')
     }
@@ -27,10 +28,10 @@ export default function SearchBar( setOrder) {
   
 
   return (
-    <div>
+    <div className={Styles.container}>
       
-        <input type="text" onChange={(e)=> handleInputChange(e)} placeholder='Search...' value={search} />
-        <button type='submit' value={search} key='Search' onClick={(e)=> handleSubmit(e)}>Search</button>
+        <input type="text" className={Styles.text} onChange={(e)=> handleInputChange(e)} placeholder='Search...' value={search} />
+        <button type='submit' className={Styles.btnSearch} value={search} key='Search' onClick={(e)=> handleSubmit(e)}>Search</button>
         
       
     </div>
