@@ -10,3 +10,171 @@
     align-content: center;
     justify-content: space-between;
   }
+
+.actBox {
+  margin-left: 34vw;
+  /* margin-top: 4vw; */
+  width: 33vw;
+  height: 33vw;
+  border-radius: 30px;
+  background-color: rgba(128, 128, 128, 0.557);
+  box-shadow: 15px 15px 30px rgb(25, 25, 25),
+             -15px -15px 30px rgb(60, 60, 60);
+ 
+}
+
+  .inputName{
+    border-color: #252422;
+    border-radius: 2px;
+    font-size: 16px;
+    background-color: rgb(177, 169, 169);
+    color: #0d0d0d;
+    font-style: oblique;
+    text-align: center;
+    margin-bottom: 1vw;
+}
+
+  
+.name{
+  color: #0d0d0d;
+  font-style: oblique;
+  font-size: 20px;
+  margin-right: 10px;
+  font-weight: bold;
+
+}
+
+
+.difficulty{
+  color: #0d0d0d;
+  font-style: oblique;
+  font-size: 20px;
+  margin-right: 10px;
+  font-weight: bolder;
+  margin-left: -8vw;
+
+}
+
+.barraDifficulty, .barraCountries, .barraDuration, .barraSeason{
+  border-color: #252422;
+  border-radius: 2px;
+  font-size: 16px;
+  background-color: rgb(177, 169, 169);
+  color: #0d0d0d;
+  font-style: oblique;
+  margin-bottom: 1vw;    
+}
+.countries{
+  color: red;
+}
+
+.duration{
+  color: #0d0d0d;
+  font-style: oblique;
+  font-size: 20px;
+  margin-right: 10px;
+  font-weight: bolder;
+
+}
+
+.season{
+  color: #0d0d0d;
+  font-style: oblique;
+  font-size: 20px;
+  margin-right: 10px;
+  font-weight: bolder;
+  margin-left: -6.5vw;
+
+}
+
+.countries{
+  color: #0d0d0d;
+  font-style: oblique;
+  font-size: 20px;
+  margin-right: 10px;
+  font-weight: bolder;
+
+ 
+}
+
+
+
+
+.btnBack{
+  color: #000000;
+  background: #ffffff;
+  font-size: 16px;
+  padding: 10px 10px;
+  margin-bottom: 30px;
+  border-radius: 5px; 
+  opacity: .7;   
+}
+  
+.btnBack:hover{
+  opacity: .7;
+  background: #ffffff;
+  color: #000000;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.btnCreate{
+  color: #000000;
+  background: rgba(49, 49, 49, 0.557);
+  font-size: 16px;
+  padding: 10px 10px;
+  margin-bottom: 30px;
+  border-radius: 5px;  
+}
+  
+.btnCreate:hover{
+  /* opacity: .7; */
+  background: rgba(49, 49, 49, 0.557);
+  color: #000000;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.title{
+  color: #252422;
+  font-style: oblique;
+  font-weight: 700;
+  font-size: 50px;
+  display: block;
+  font-family: monospace;
+  white-space: nowrap;
+  border-right: 4px solid;
+  width: 38ch;
+  margin-left: 18vw;
+  
+  animation: typing 5s steps(38), blink .5s infinite alternate;
+  overflow: hidden;
+}
+@keyframes typing{
+  from {width: 0 }
+}
+  
+@keyframes blink {
+  50% {border: transparent}
+}
+.btnDelete{
+  border-color: #252422;
+  border-radius: 2px;
+  font-size: 16px;
+  background-color: rgb(177, 169, 169);
+  color: #0d0d0d;
+  font-style: oblique;
+  margin-bottom: 1vw; 
+}
+
+.deleteCountries{
+
+    margin-left: 34vw;
+    /* margin-top: 4vw; */
+    width: 5vw;
+    height: 6vw;
+    border-radius: 15px;
+    background-color: rgba(128, 128, 128, 0.557);
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+               -15px -15px 30px rgb(60, 60, 60);
+}

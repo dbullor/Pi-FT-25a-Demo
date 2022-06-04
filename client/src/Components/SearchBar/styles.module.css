@@ -17,6 +17,7 @@
     background: rgba(63, 63, 63, 0.557);
     color: #000000;
     font-weight: bolder;
+    cursor: pointer;
 }
 
 .text{

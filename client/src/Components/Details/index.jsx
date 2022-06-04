@@ -34,27 +34,27 @@ export default function Details() {
             <h3 className={Styles.population}>Population: {country.population} People</h3>
             <h3 className={Styles.id}>Id: {country.id}</h3>
           </div>
+          </div>
           <div>
             {
               country.activities?.map((c)=>{
                 return (    
-                   <div className='activities'>
-                      <h6>Activities: {c.name} </h6>
+                   <div className={Styles.containerAct}>
+                      <h4 className={Styles.nameAct}>Activity: {c.name} </h4>
                    
-                   <h6>Difficulty: {c.difficulty} </h6>
+                   <h5 className={Styles.difficulty}>Difficulty: {c.difficulty} </h5>
                    
-                   <h6>Season: {c.season} </h6>
+                   <h5 className={Styles.season}>Season: {c.season} </h5>
                   
-                   <h6>Duration: {c.duration}</h6>
+                   <h5 className={Styles.duration}>Duration: {c.duration}</h5>
                    </div>
                 );
               })
             }
-          </div>
           
         </div>
       </div>
-          <Link to='/home'><button>Back</button></Link>
+          <Link to='/home'><button className={Styles.btnBack}>Back</button></Link>
       
     </div>
   )  

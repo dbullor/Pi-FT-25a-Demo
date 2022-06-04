@@ -99,21 +99,17 @@ useEffect(()=>{
   return (
     <div className={Styles.container}>
       <div>
-      <h1>The World waits for Us. Let's travel!!</h1>
+      <h1 className={Styles.title}>The World Waits for Us. Let's Travel!!</h1>
       <h2>Create Tourist Activity</h2>
       </div>
-      <form>
-        <div>
-          <label>Name:</label>
-          <input type="text" autoComplete="off" value={input.name} key='name' required name='name' onChange={(e)=>handleChange(e)} />
-          {errors.name && (
-            <p className='error'>{errors.name}</p>
-          )}
-        </div>
+      <form className={Styles.form}>
+        <div className={Styles.actBox}>
+          <label className={Styles.name}>Name:</label>
+          <input className={Styles.inputName} type="text" autoComplete="off" value={input.name} key='name' required name='name' onChange={(e)=>handleChange(e)} />
 
         <div>
-          <label>Difficulty: </label>
-          <select onChange = {e => handleDifficulty(e)}>Difficulty
+          <label className={Styles.difficulty}>Difficulty: </label>
+          <select className={Styles.barraDifficulty} onChange = {e => handleDifficulty(e)}>Difficulty
           <option value= {1} key="1">1</option>
           <option value={2} key ="2">2</option>
           <option value={3} key ="3">3</option>
@@ -123,8 +119,8 @@ useEffect(()=>{
         </div>
 
         <div>
-        <label>Duration: </label>
-        <select onChange = {e => handleDuration(e)}>Duration
+        <label className={Styles.duration}>Duration: </label>
+        <select className={Styles.barraDuration} onChange = {e => handleDuration(e)}>Duration
           <option value="Less than 1 hour" key="1">Less than 1 hour</option>
           <option value="Less than 3 hours" key ="3">Less than 3 hours</option>
           <option value="Less than 6 hours" key ="more3">Less than 6 hours</option>
@@ -135,8 +131,8 @@ useEffect(()=>{
         </div>
 
         <div>
-          <label>Season: </label>
-          <select onChange = {e => handleSeason(e)}>Season
+          <label className={Styles.season}>Season: </label>
+          <select className={Styles.barraSeason} onChange = {e => handleSeason(e)}>Season
           <option value="Season" key="Season">Season</option>
           <option value="Summer" key="Summer">Summer</option>
           <option value="Autumn" key ="Autumn">Autumn</option>
@@ -145,26 +141,30 @@ useEffect(()=>{
           
         </select>
         </div>
-        <label>Countries: <select onChange={(e)=>handleSelect(e)}>
+        <label className={Styles.countries}>Countries: <select onChange={(e)=>handleSelect(e)}>
           {countries.map((c) =>(
-            <option  value={c.id}>{c.name}</option>
-          ))}
+            <option className={Styles.barraCountries} value={c.id}>{c.name}</option>
+            ))}
         </select></label>
         {errors.name || !input.name || input.countries.length=== 0
         
-         ? <button type="submit"   disabled={true}>Create Activity</button> : 
+        ? <button className={Styles.btnCreate} type="submit"   disabled={true}>Create Activity</button> : 
         <button type="submit" onClick={(e)=> handleSubmit(e)} >Create Activity</button>}
+      {errors.name && (
+        <p className={Styles.errorName}>{errors.name}</p>
+        )}
+      </div>
       </form>
       {
         input.countries.map(el=>
-          <div className='deleteCountries'>
+          <div className={Styles.deleteCountries}>
             <p>{el}</p>
-            <button className='btnDelete'  onClick={()=>handleDelete(el)}>X</button>
+            <button className={Styles.btnDelete}  onClick={()=>handleDelete(el)}>X</button>
           </div>
         )
       }
       <Link to='/home'>
-        <button>Back</button>
+        <button className={Styles.btnBack}>Back</button>
       </Link>
     </div>
   )

@@ -4,6 +4,7 @@ img{
     width: 100px;
     height: 80px;
     border: unset;
+    margin-top: 8px;
 }
 
 .name{
@@ -22,7 +23,7 @@ img{
 }
 .container {
     width: 190px;
-    height: 220px;
+    height: 230px;
     border-radius: 30px;
     /* background: #212121; */
     background-color: rgba(128, 128, 128, 0.557);

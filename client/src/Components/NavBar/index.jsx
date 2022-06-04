@@ -9,7 +9,7 @@ export default function NavBar() {
 
     <div>
       <div className={Styles.box}>
-      <h1 className={Styles.title}>The World waits for Us. Let's travel!!</h1>
+      <h1 className={Styles.title}>The World Waits for Us. Let's Travel!!</h1>
         <SearchBar/>
         
       </div>
