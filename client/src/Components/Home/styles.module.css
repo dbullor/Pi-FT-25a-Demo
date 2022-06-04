@@ -1,5 +1,5 @@
 .container{
-    background-image: url('../../Image/Home.jpg');
+  background: url('../../Image/landingPage.jpg') no-repeat center fixed;
     background-position: 0px 0px;
     -webkit-background-size: 100% 100%;
     -moz-background-size: 100% 100%;

@@ -21,18 +21,18 @@ export default function Details() {
 
   return(
     <div className={Styles.container}>
-    <h1>The World waits for Us. Let's travel!!</h1>
-    <div className='cardContainer'>
-        <div className='countryContainer'>
+      <h1 className={Styles.title}>The World waits for Us. Let's travel!!</h1>
+      <div className={Styles.boxHigh}>
+        <div className={Styles.boxCard}>
           <div className='card'>
-            <img className='img' src={country.flag} alt={country.name} />
-            <h2>{country.name}</h2>
-            <h3>Capital: {country.capital}</h3>
-            <h3>Continent: {country.continent}</h3>
-            <h3>Subregion: {country.sub_region}</h3>
-            <h3>Area: {country.area} Km2</h3>
-            <h3>Population: {country.population} People</h3>
-            <h3>Id: {country.id}</h3>
+            <img className={Styles.flag} src={country.flag} alt={country.name} />
+            <h2 className={Styles.name}>{country.name}</h2>
+            <h3 className={Styles.capital}>Capital: {country.capital}</h3>
+            <h3 className={Styles.continent}>Continent: {country.continent}</h3>
+            <h3 className={Styles.subRegion}>Subregion: {country.sub_region}</h3>
+            <h3 className={Styles.area}>Area: {country.area} Km2</h3>
+            <h3 className={Styles.population}>Population: {country.population} People</h3>
+            <h3 className={Styles.id}>Id: {country.id}</h3>
           </div>
           <div>
             {
@@ -53,8 +53,8 @@ export default function Details() {
           </div>
           
         </div>
-          <Link to='/home'><button>Back</button></Link>
       </div>
+          <Link to='/home'><button>Back</button></Link>
       
     </div>
   )  

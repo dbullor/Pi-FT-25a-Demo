@@ -38,7 +38,7 @@
   }
 
 .title{
-  color: #2f3e46;
+  color: #252422;
   font-style: oblique;
   font-weight: 700;
   font-size: 50px;
@@ -47,7 +47,7 @@
   white-space: nowrap;
   border-right: 4px solid;
   width: 38ch;
-  margin-left: 190px;
+  margin-left: 210px;
 
   animation: typing 5s steps(38), blink .5s infinite alternate;
   overflow: hidden;
