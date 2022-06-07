@@ -11,19 +11,17 @@ import FiltersOrder from '../Filters/index';
 import Styles from './styles.module.css';
 
 
-
-
-
-  //useEffect para traer el estado cuando el componente se monta
- 
 function Home() {
-  // const [estado, setEstado] = useState(false)
+
   const dispatch = useDispatch();
+
+  //arreglo con paises del store
   const { countries } = useSelector((state)=> {return state})
+
+  //paginado
   const [currentPage, setCurrentPage] = useState(1);
-  let countriesPerPage = 0;
-  if (currentPage === 1) { countriesPerPage = 9 }
-  if (currentPage >= 2) { countriesPerPage = 10 }
+  let countriesPerPage = 10;
+
   const indexOfLastCountry = currentPage * countriesPerPage;
   const indexFirstCountry = indexOfLastCountry - countriesPerPage;
 
@@ -36,17 +34,15 @@ function Home() {
     setCurrentPage(pageNumber);
   };
 
-  useEffect(()=>{
-    console.log(currentCountries)
-  },[])
 
+
+//para traer el estado cuando el componente se monta, o se actualiza
   useEffect(() => {
-    dispatch(getAllCountries());
-    
+    dispatch(getAllCountries());  
   }, [dispatch]);
 
  
-
+  //recarga los paises
   function handleClick(e){
     e.preventDefault();
     dispatch(getAllCountries())
@@ -88,7 +84,6 @@ function Home() {
             })
           ) : (
             <div>
-              <img src="{cargando}" alt="Not Found" />,
               <h3>Countries not found</h3>
             </div>
           )}

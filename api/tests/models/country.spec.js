@@ -19,4 +19,15 @@ describe('Country model', () => {
       });
     });
   });
+  describe('Country', ()=>{
+    it("Should throw an error if continent is provided", (done)=>{
+      Country.create({
+        name: 'Peru',
+        flag: 'url'
+      })
+      .then(()=> done(new TypeError ('Please provide almost one valid continent')))
+      .catch(()=> done())
+    })
+  })
 });
+

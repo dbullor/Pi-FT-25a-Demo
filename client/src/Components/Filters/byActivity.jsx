@@ -7,7 +7,9 @@ import { useEffect } from 'react';
 
 export default function FilterByActivity() {
     const dispatch = useDispatch()
+
     const allActivities = useSelector((state) => state.allActivities);
+    
     useEffect(()=>{
       dispatch(getAllActivities())
     }, [dispatch]);

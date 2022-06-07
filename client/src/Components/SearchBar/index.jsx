@@ -6,11 +6,13 @@ import { useDispatch } from 'react-redux';
 import Styles from './styles.module.css';
 
 
-export default function SearchBar( setOrder) {
+export default function SearchBar() {
+
   const [search, setSearch] = useState('')//creo un estado local
   let dispatch = useDispatch()
 
-  function handleInputChange(e){
+ 
+  function handleChange(e){
     e.preventDefault()
     setSearch(e.target.value)
     console.log(search);
@@ -30,7 +32,7 @@ export default function SearchBar( setOrder) {
   return (
     <div className={Styles.container}>
       
-        <input type="text" className={Styles.text} onChange={(e)=> handleInputChange(e)} placeholder='Search...' value={search} />
+        <input type="text" className={Styles.text} onChange={(e)=> handleChange(e)} placeholder='Search...' value={search} />
         <button type='submit' className={Styles.btnSearch} value={search} key='Search' onClick={(e)=> handleSubmit(e)}>Search</button>
         
       

@@ -5,13 +5,12 @@ import Styles from './styles.module.css';
 
 export default function FilterByContinent() {
   const dispatch = useDispatch()
-  function onSelectChange(e){
-   
-    dispatch(continentFilter(e.target.value))
-    
+
+  function handleChange(e){
+    dispatch(continentFilter(e.target.value))   
   }
   return (
-    <select className={Styles.continent}  onChange = {e => onSelectChange(e)} >
+    <select className={Styles.continent}  onChange = {e => handleChange(e)} >
     <option value="All" key="All">All Continents</option>
     <option value="Americas" key ="Americas">Americas</option>
     <option value="Europe" key ="Europe">Europe</option>

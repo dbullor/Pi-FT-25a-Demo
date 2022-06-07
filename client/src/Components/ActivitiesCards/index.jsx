@@ -44,7 +44,7 @@ function handleChange(e){
     ...input,
     [e.target.name] : e.target.value
   })
-
+  
   setErrors(validate({//seteo mi estado local errors
     ...input,
     [e.target.name]: e.target.value
@@ -55,6 +55,7 @@ function handleChange(e){
 }
 
 
+//maneja selección de los países
 function handleSelect(e){
   setInput({
     ...input,
@@ -62,6 +63,8 @@ function handleSelect(e){
   })
 }
 
+
+//asociada al botón que despacha la actividad creada.
 function handleSubmit(e){
   e.preventDefault();
   setErrors(validate({
@@ -82,6 +85,7 @@ function handleSubmit(e){
   navigate('/home')
 }
 
+
 function handleDelete(el){
   setInput({
     ...input,
@@ -89,6 +93,7 @@ function handleDelete(el){
   })
 }
 
+//para que traiga actualizados los paises cada vez que entro al componente.
 useEffect(()=>{
   dispatch(getAllActivities())
   dispatch(getAllCountries())
@@ -96,11 +101,11 @@ useEffect(()=>{
 
 
 
-  return (
-    <div className={Styles.container}>
+return (
+  <div className={Styles.container}>
       <div>
       <h1 className={Styles.title}>The World Waits for Us. Let's Travel!!</h1>
-      <h2>Create Tourist Activity</h2>
+      <h2 className={Styles.subTitle}>Create Tourist Activity</h2>
       </div>
       <form className={Styles.form}>
         <div className={Styles.actBox}>
@@ -110,6 +115,7 @@ useEffect(()=>{
         <div>
           <label className={Styles.difficulty}>Difficulty: </label>
           <select className={Styles.barraDifficulty} onChange = {e => handleDifficulty(e)}>Difficulty
+          <option value="Difficulty" key='Difficulty'>Difficulty</option>
           <option value= {1} key="1">1</option>
           <option value={2} key ="2">2</option>
           <option value={3} key ="3">3</option>
@@ -118,9 +124,11 @@ useEffect(()=>{
         </select>
         </div>
 
+      
         <div>
         <label className={Styles.duration}>Duration: </label>
         <select className={Styles.barraDuration} onChange = {e => handleDuration(e)}>Duration
+          <option value="Duration" key="Duration">Duration</option>
           <option value="Less than 1 hour" key="1">Less than 1 hour</option>
           <option value="Less than 3 hours" key ="3">Less than 3 hours</option>
           <option value="Less than 6 hours" key ="more3">Less than 6 hours</option>
@@ -130,22 +138,26 @@ useEffect(()=>{
         </select>
         </div>
 
+       
         <div>
           <label className={Styles.season}>Season: </label>
           <select className={Styles.barraSeason} onChange = {e => handleSeason(e)}>Season
-          <option value="Season" key="Season">Season</option>
-          <option value="Summer" key="Summer">Summer</option>
-          <option value="Autumn" key ="Autumn">Autumn</option>
-          <option value="Winter" key ="Winter">Winter</option>
-          <option value="Spring" key ="Spring">Spring</option>
-          
-        </select>
+            <option value="Season" key="Season">Season</option>
+            <option value="Summer" key="Summer">Summer</option>
+            <option value="Autumn" key ="Autumn">Autumn</option>
+            <option value="Winter" key ="Winter">Winter</option>
+            <option value="Spring" key ="Spring">Spring</option>        
+          </select>
         </div>
-        <label className={Styles.countries}>Countries: <select onChange={(e)=>handleSelect(e)}>
+         
+        <label className={Styles.countries}>Countries: <select className={Styles.barraCountries} onChange={(e)=>handleSelect(e)}>
           {countries.map((c) =>(
-            <option className={Styles.barraCountries} value={c.id}>{c.name}</option>
+            <option  value={c.id}>{c.name}</option>
             ))}
         </select></label>
+        <Link to='/home'>
+          <button className={Styles.btnBack}>Back</button>
+        </Link>
         {errors.name || !input.name || input.countries.length=== 0
         
         ? <button className={Styles.btnCreate} type="submit"   disabled={true}>Create Activity</button> : 
@@ -157,18 +169,16 @@ useEffect(()=>{
       </form>
       {
         input.countries.map(el=>
-          <div className={Styles.deleteCountries}>
-            <p>{el}</p>
-            <button className={Styles.btnDelete}  onClick={()=>handleDelete(el)}>X</button>
+          <div className={Styles.ext}>
+            <div className={Styles.chosenCountry}>
+              <div className={Styles.idCountry}>{el}</div>
+              <button className={Styles.btnDelete}  onClick={()=>handleDelete(el)}>X</button>
+            </div>
           </div>
         )
       }
-      <Link to='/home'>
-        <button className={Styles.btnBack}>Back</button>
-      </Link>
     </div>
   )
 }
-
 
 

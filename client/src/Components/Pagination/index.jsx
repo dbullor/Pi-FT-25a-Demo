@@ -13,13 +13,7 @@ export default function Pagination({ countriesPerPage, allCountries, pagination 
           {pageNumbers &&
             pageNumbers.map((number) => {
               return (
-                <button
-                  key={number}
-                  onClick={() => pagination(number)}
-                  className={Styles.pagination}>
-                   
-                  {number}
-                </button>
+                <button key={number} onClick={() => pagination(number)} className={Styles.pagination}>{number}</button>
               );
             })}
         </div>

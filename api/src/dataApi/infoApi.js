@@ -21,13 +21,13 @@ const infoApi = async () =>{
                     : "This Subregion isn't loaded.",
                 area: country.area,
                 population: country.population,
-            } })
+            } });
             await Country.bulkCreate(urlCountries);
             
         
     } catch (err) {
         console.log(err);
-    }
+    };
 };
 
 module.exports = {

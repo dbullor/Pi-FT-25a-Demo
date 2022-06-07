@@ -41,9 +41,7 @@
   font-size: 20px;
   margin-right: 10px;
   font-weight: bold;
-
 }
-
 
 .difficulty{
   color: #0d0d0d;
@@ -52,7 +50,6 @@
   margin-right: 10px;
   font-weight: bolder;
   margin-left: -8vw;
-
 }
 
 .barraDifficulty, .barraCountries, .barraDuration, .barraSeason{
@@ -62,10 +59,7 @@
   background-color: rgb(177, 169, 169);
   color: #0d0d0d;
   font-style: oblique;
-  margin-bottom: 1vw;    
-}
-.countries{
-  color: red;
+  margin-bottom: 1.5vw;    
 }
 
 .duration{
@@ -74,7 +68,6 @@
   font-size: 20px;
   margin-right: 10px;
   font-weight: bolder;
-
 }
 
 .season{
@@ -87,29 +80,18 @@
 
 }
 
-.countries{
-  color: #0d0d0d;
-  font-style: oblique;
-  font-size: 20px;
-  margin-right: 10px;
-  font-weight: bolder;
-
- 
-}
-
-
-
-
 .btnBack{
   color: #000000;
   background: #ffffff;
   font-size: 16px;
+  margin-right: 3vw;
   padding: 10px 10px;
-  margin-bottom: 30px;
   border-radius: 5px; 
-  opacity: .7;   
+  opacity: .7;
+  width: 8vw;
+  margin-top: 20px; 
 }
-  
+
 .btnBack:hover{
   opacity: .7;
   background: #ffffff;
@@ -120,16 +102,17 @@
 
 .btnCreate{
   color: #000000;
-  background: rgba(49, 49, 49, 0.557);
+  background: #ffffff;
   font-size: 16px;
   padding: 10px 10px;
-  margin-bottom: 30px;
-  border-radius: 5px;  
+  border-radius: 5px; 
+  opacity: .7; 
+  border-color: #0d0d0d;  
 }
-  
+
 .btnCreate:hover{
-  /* opacity: .7; */
-  background: rgba(49, 49, 49, 0.557);
+  opacity: .7;
+  background: #ffffff;
   color: #000000;
   font-weight: bolder;
   cursor: pointer;
@@ -153,10 +136,22 @@
 @keyframes typing{
   from {width: 0 }
 }
-  
+
 @keyframes blink {
   50% {border: transparent}
 }
+
+.subTitle{
+  color: #252422;
+  font-style: oblique;
+  font-weight: 500;
+  font-size: 40px;
+  display: block;
+  white-space: nowrap;
+  margin-left: 2.5vw;
+}
+
+
 .btnDelete{
   border-color: #252422;
   border-radius: 2px;
@@ -165,16 +160,69 @@
   color: #0d0d0d;
   font-style: oblique;
   margin-bottom: 1vw; 
+  
+}
+.btnDelete:hover{
+  border-color: #252422;
+  border-radius: 2px;
+  font-size: 16px;
+  background-color: rgb(126, 20, 20);
+  color: #ffffff;
+  font-style: oblique;
+  margin-bottom: 1vw; 
 }
 
-.deleteCountries{
 
-    margin-left: 34vw;
-    /* margin-top: 4vw; */
-    width: 5vw;
-    height: 6vw;
-    border-radius: 15px;
-    background-color: rgba(128, 128, 128, 0.557);
-    box-shadow: 15px 15px 30px rgb(25, 25, 25),
-               -15px -15px 30px rgb(60, 60, 60);
+
+.chosenCountry{
+margin-bottom: 50px;
+}
+
+.ext{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+}
+ 
+
+
+
+
+.idCountry{
+  color: #0d0d0d;
+  font-style: oblique;
+  font-size: 16px;
+  font-weight: bolder;
+ margin-top: -10vw; 
+}
+
+.countries{
+  color: #0d0d0d;
+  font-style: oblique;
+  font-size: 20px;
+  margin-right: 10px;
+  font-weight: bolder;
+
+}
+
+.errorName{
+  color: #0d0d0d;
+  /* font-style: oblique; */
+  font-size: 16px;
+  margin-right: 10px;
+  text-decoration: solid underline;
+  font-weight: bolder;   
+}
+
+.barraCountries{
+  border-color: #252422;
+  border-radius: 2px;
+  font-size: 18px;
+  width: 30vw;
+  background-color: rgb(177, 169, 169);
+  color: #0d0d0d;
+  font-style: oblique;
+  margin-bottom: 1vw;   
+  margin-top: 1.5vw; 
 }

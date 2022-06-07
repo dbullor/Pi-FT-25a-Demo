@@ -8,12 +8,12 @@ const getAllActivities =  async (req, res) => {
         if(activities){
             res.json(activities)        
         } else{
-            res.status(404).send("Activity isn't found")
-        }
+            res.status(404).send("Activity isn't found");
+        };
     
         } catch (error) {
-            res.status(404).json(error)
-    }
-}
+            res.status(404).json(error);
+    };
+};
 
-module.exports = {getAllActivities}
+module.exports = {getAllActivities};

@@ -1,8 +1,8 @@
 
 const { Country, Activity } = require ('../../db');
-const { Op } = require('sequelize')
+const { Op } = require('sequelize');
 
-
+//busca pais por query, si no encuentra por query manda todos los paises
 const getCountries =  async (req, res) => {
     try {
         const name = req.query.name;
@@ -16,13 +16,13 @@ const getCountries =  async (req, res) => {
                 attributes: ['name', 'difficulty', 'duration', 'season'],
                 through: {attributes: []},
             },            
-        })
+        });
             if (!country){
-                res.status(404).json('Country not found')
+                res.status(404).json('Country not found');
             } else {
-                res.json(country)
-                console.log(country)
-            }
+                res.json(country);
+                console.log(country);
+            };
         } else {
             const countries = await Country.findAll({
                 include: {
@@ -34,19 +34,20 @@ const getCountries =  async (req, res) => {
                         'duration',
                     ],
                     through: {attributes: []}
-                }            
-            })
+                }
+            });
             if(countries){
-                res.json(countries)        
+                res.json(countries);     
             } else{
-                res.status(404).send("Country isn't found")
-            }
-        }
+                res.status(404).send("Country isn't found");
+            };
+        };
         } catch (error) {
-            res.status(404).send(error)
+            res.status(404).send(error);
     }
 }
 
+//este cb busca país por id, si no encuentra manda todo.
 const getCountry = async (req, res) => {
     const { id } = req.params;
     try {

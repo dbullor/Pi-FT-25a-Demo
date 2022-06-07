@@ -23,7 +23,7 @@ const { conn } = require('./src/db.js');
 
 
 // Syncing all the models at once.
-conn.sync({ force: false }).then(infoApi, console.log("Countries were loaded"))
+conn.sync({ force: true }).then(infoApi, console.log("Countries were loaded"))
 
 
 .then(() => {

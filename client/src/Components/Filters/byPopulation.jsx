@@ -6,12 +6,13 @@ import Styles from './styles.module.css';
 export default function OrderByPopulation() {
   const dispatch = useDispatch();
   
-  function onSelectChange(e){
+
+  function handleChange(e){
     dispatch(orderPopulation(e.target.value))
   }
   
   return (
-    <select name='select' className={Styles.population} onChange={onSelectChange}>
+    <select name='select' className={Styles.population} onChange={handleChange}>
         <option value="orderPopulation" key="orderPopulation">Order population</option>
         <option value="Largest" key='Largest'>Population ascendant</option>
         <option value="Smallest" key='Smallest'>Population descendant</option>
