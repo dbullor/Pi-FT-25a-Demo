@@ -161,7 +161,7 @@ return (
         {errors.name || !input.name || input.countries.length=== 0
         
         ? <button className={Styles.btnCreate} type="submit"   disabled={true}>Create Activity</button> : 
-        <button type="submit" onClick={(e)=> handleSubmit(e)} >Create Activity</button>}
+        <button type="submit" className={Styles.btnCreate} onClick={(e)=> handleSubmit(e)} >Create Activity</button>}
       {errors.name && (
         <p className={Styles.errorName}>{errors.name}</p>
         )}
