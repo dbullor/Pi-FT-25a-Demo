@@ -67,22 +67,27 @@ function handleSelect(e){
 //asociada al botón que despacha la actividad creada.
 function handleSubmit(e){
   e.preventDefault();
-  setErrors(validate({
-    ...input,
-    [e.target.value]: e.target.value
-  }, allActivities.map((e)=>{
-    return e.name
-  })))
-  dispatch(postActivity(input))
-  alert('Tourist Activity created')
-  setInput({
-    name:'',
-    difficulty:'',
-    duration: '',
-    season: '',
-    countries: []
-  })
-  navigate('/home')
+  if(!input.name || !input.season || !input.difficulty || !input.duration || !input.countries){
+    return alert('Please complete all the parameters')
+  } else{
+    setErrors(validate({
+      ...input,
+      [e.target.value]: e.target.value
+    }, allActivities.map((e)=>{
+      return e.name
+    })))
+    dispatch(postActivity(input))
+    alert('Tourist Activity created')
+    setInput({
+      name:'',
+      difficulty:'',
+      duration: '',
+      season: '',
+      countries: []
+    })
+    navigate('/home')
+  }
+
 }
 
 
@@ -110,7 +115,7 @@ return (
       <form className={Styles.form}>
         <div className={Styles.actBox}>
           <label className={Styles.name}>Name:</label>
-          <input className={Styles.inputName} type="text" autoComplete="off" value={input.name} key='name' required name='name' onChange={(e)=>handleChange(e)} />
+          <input className={Styles.inputName} type="text" autoComplete="off" value={input.name} key='name' name='name' onChange={(e)=>handleChange(e)} />
 
         <div>
           <label className={Styles.difficulty}>Difficulty: </label>

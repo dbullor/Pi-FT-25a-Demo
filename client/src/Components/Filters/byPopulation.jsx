@@ -3,11 +3,13 @@ import { orderPopulation } from '../../Redux/Actions'
 import { useDispatch } from 'react-redux'
 import Styles from './styles.module.css';
 
+
 export default function OrderByPopulation() {
   const dispatch = useDispatch();
   
 
   function handleChange(e){
+    e.preventDefault()
     dispatch(orderPopulation(e.target.value))
   }
   

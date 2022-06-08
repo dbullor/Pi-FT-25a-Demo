@@ -14,7 +14,7 @@ import Styles from './styles.module.css';
 function Home() {
 
   const dispatch = useDispatch();
-
+  
   //arreglo con paises del store
   const { countries } = useSelector((state)=> {return state})
 

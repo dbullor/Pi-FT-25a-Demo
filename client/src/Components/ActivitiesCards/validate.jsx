@@ -15,7 +15,7 @@ export default function validate(input, activitiesName){
     } else if(!input.season){
       errors.season = "It's necessary a Season."
     } else if (input.season === 'Season'){
-      errors.season = 'no puede ser season'
+      errors.season = "it can't be Season."
     }else if(!input.countries){
       errors.countries = "At least one Country is necessary."
     }
