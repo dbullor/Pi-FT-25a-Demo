@@ -5,7 +5,7 @@ import Styles from './styles.module.css';
 import { useEffect } from 'react';
 
 
-export default function FilterByActivity() {
+export default function FilterByActivity({setCurrentPage}) {
     const dispatch = useDispatch()
 
     const allActivities = useSelector((state) => state.allActivities);
@@ -16,6 +16,7 @@ export default function FilterByActivity() {
 
     function handleChange(e){
       dispatch(activityFilter(e.target.value));
+      setCurrentPage(1)
   }
 
   return (

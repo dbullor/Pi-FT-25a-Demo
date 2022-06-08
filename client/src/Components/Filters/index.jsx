@@ -5,14 +5,14 @@ import FilterByContinent from '../Filters/byContinent';
 import FilterByActivity from '../Filters/byActivity';
 import Styles from './styles.module.css';
 
-export default function Filter() {
+export default function Filter({setCurrentPage}) {
 
   return (
   <div className={Styles.container}>
-    <OrderByPopulation/>
-    <OrderByLetter/>
-    <FilterByActivity/>
-    <FilterByContinent/>
+    <OrderByPopulation setCurrentPage={setCurrentPage}/>
+    <OrderByLetter setCurrentPage={setCurrentPage}/>
+    <FilterByActivity setCurrentPage={setCurrentPage}/>
+    <FilterByContinent setCurrentPage={setCurrentPage}/>
   </div>
   )
 }

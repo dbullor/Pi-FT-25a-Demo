@@ -3,11 +3,12 @@ import { orderLetter } from '../../Redux/Actions'
 import { useDispatch } from 'react-redux'
 import Styles from './styles.module.css';
 
-export default function OrderLetter() {
+export default function OrderLetter({setCurrentPage}) {
   const dispatch = useDispatch()
 
   function handleChange(e){
     dispatch(orderLetter(e.target.value))
+    setCurrentPage(1)
   }
   return (
       <select name="order" className={Styles.letter} onChange={handleChange}>

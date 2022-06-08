@@ -3,11 +3,12 @@ import { continentFilter } from '../../Redux/Actions'
 import { useDispatch } from 'react-redux'
 import Styles from './styles.module.css';
 
-export default function FilterByContinent() {
+export default function FilterByContinent({setCurrentPage}) {
   const dispatch = useDispatch()
 
   function handleChange(e){
-    dispatch(continentFilter(e.target.value))   
+    dispatch(continentFilter(e.target.value))  
+    setCurrentPage(1) 
   }
   return (
     <select className={Styles.continent}  onChange = {e => handleChange(e)} >

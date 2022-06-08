@@ -67,9 +67,11 @@ function handleSelect(e){
 //asociada al botón que despacha la actividad creada.
 function handleSubmit(e){
   e.preventDefault();
-  if(!input.name || !input.season || !input.difficulty || !input.duration || !input.countries){
+  if(!input.name || !input.season || !input.difficulty || !input.duration || !input.countries|| input.duration === 'Duration' ||
+    input.difficulty === 'Difficulty' || input.season === 'Season'){
     return alert('Please complete all the parameters')
-  } else{
+  } else
+  {
     setErrors(validate({
       ...input,
       [e.target.value]: e.target.value

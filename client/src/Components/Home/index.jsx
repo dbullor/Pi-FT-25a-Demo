@@ -52,7 +52,7 @@ function Home() {
       <div>
       <NavBar className= {Styles.navbar}/>
       <div className={Styles.filter}>
-      <FiltersOrder/>
+      <FiltersOrder setCurrentPage= {setCurrentPage}/>
 
       </div>
       <div>

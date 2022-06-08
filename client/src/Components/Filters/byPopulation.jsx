@@ -4,13 +4,14 @@ import { useDispatch } from 'react-redux'
 import Styles from './styles.module.css';
 
 
-export default function OrderByPopulation() {
+export default function OrderByPopulation({setCurrentPage}) {
   const dispatch = useDispatch();
   
 
   function handleChange(e){
     e.preventDefault()
     dispatch(orderPopulation(e.target.value))
+    setCurrentPage(1)
   }
   
   return (
